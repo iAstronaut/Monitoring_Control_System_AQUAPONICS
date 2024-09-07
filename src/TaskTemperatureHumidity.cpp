@@ -4,6 +4,9 @@ DHT20 dht20;
 
 void TaskTemperatureHumidity(void *pvParameters)
 {
+    Wire.begin(11, 12);
+    Wire.setClock(250000);
+
     if (dht20.begin() != 0)
     {
         Serial.println("Failed to initialize DHT20 sensor");

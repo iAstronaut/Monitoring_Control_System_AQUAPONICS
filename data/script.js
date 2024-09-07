@@ -58,6 +58,10 @@ function onMessage(event) {
     if (data.current) {
         document.getElementById('current').innerHTML = data.current;
     }
+    if (data.latitude && data.longitude) {
+        document.getElementById('latitude').innerHTML = data.latitude;
+        document.getElementById('longitude').innerHTML = data.longitude;
+    }
     if (data.schedule) {
         var scheduleContainer = document.getElementById('scheduleContainer');
         scheduleContainer.innerHTML = ''; // Clear previous schedule items

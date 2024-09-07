@@ -20,11 +20,20 @@ void callback(char *topic, byte *payload, unsigned int length)
     }
 }
 
+void publishData(String feed, String data)
+{
+    String topic = String(IO_USERNAME) + "/feeds/" + feed;
+    if (client.connected())
+    {
+        client.publish(topic.c_str(), data.c_str());
+    }
+}
+
 void TaskMQTT(void *pvParameters)
 {
     while (!wifiConnected)
     {
-        vTaskDelay(100 / portTICK_PERIOD_MS);
+        vTaskDelay(delay_connect / portTICK_PERIOD_MS);
     }
 
     client.setServer(MQTT_SERVER, MQTT_PORT);
@@ -39,7 +48,7 @@ void TaskMQTT(void *pvParameters)
             client.subscribe("tuannguyen2208nat/feeds/relay");
             client.subscribe("tuannguyen2208nat/feeds/schedule");
             String sendData = WiFi.localIP().toString();
-            client.publish("tuannguyen2208nat/feeds/ip", sendData.c_str());
+            publishData("ip", sendData);
             Serial.println(sendData);
             Serial.println("Start");
             while (true)

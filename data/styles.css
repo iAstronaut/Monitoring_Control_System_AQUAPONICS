@@ -58,7 +58,7 @@ p {
   font-size: 1.5rem;
 }
 
-#temperature, #humidity, #current {
+#temperature, #humidity, #current,#latitude,#longitude {
   font-weight: bold;
 }
 

@@ -9,6 +9,8 @@
 #define delay_relay 100
 #define delay_temp 12000
 #define delay_gps 10000
+#define delay_connect 100
+#define delay_wifi 1000
 
 #define TXD_RELAY 6
 #define RXD_RELAY 7

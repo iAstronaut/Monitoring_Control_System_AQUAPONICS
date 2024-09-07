@@ -12,6 +12,9 @@
 #include <ESPAsyncWebServer.h>
 #include <WiFiUdp.h>
 #include <NTPClient.h>
+#include <SoftwareSerial.h>
+#include <TinyGPS++.h>
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
@@ -26,6 +29,7 @@
 #include "TaskServer.h"
 #include "TaskTemperatureHumidity.h"
 #include "TaskWifi.h"
+#include "TaskGps.h"
 
 typedef struct
 {

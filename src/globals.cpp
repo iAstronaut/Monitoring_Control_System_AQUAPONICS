@@ -30,7 +30,7 @@ void sendValue(int index, String state)
     Serial.println(sendData);
     if (client.connected())
     {
-        client.publish("tuannguyen2208nat/feeds/relay", sendData.c_str());
+        publishData("relay", sendData);
     }
     else
     {

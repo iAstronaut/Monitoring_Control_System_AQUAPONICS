@@ -13,7 +13,7 @@ void TaskTemperatureHumidity(void *pvParameters)
     {
         if (!wifiConnected || !client.connected())
         {
-            vTaskDelay(100 / portTICK_PERIOD_MS);
+            vTaskDelay(delay_connect / portTICK_PERIOD_MS);
             continue;
         }
 
@@ -29,8 +29,8 @@ void TaskTemperatureHumidity(void *pvParameters)
             float humidity = dht20.getHumidity();
             String temperatureStr = String(temperature, 2);
             String humidityStr = String(humidity, 2);
-            client.publish("tuannguyen2208nat/feeds/temperature", temperatureStr.c_str());
-            client.publish("tuannguyen2208nat/feeds/humidity", humidityStr.c_str());
+            publishData("temperature", temperatureStr);
+            publishData("humidity", humidityStr);
             if (ws.count() > 0)
             {
                 String data = "{\"temperature\":" + temperatureStr + ",\"humidity\":" + humidityStr + "}";

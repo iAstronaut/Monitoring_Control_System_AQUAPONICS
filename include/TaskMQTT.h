@@ -17,5 +17,6 @@ extern "C"
 #endif
 
 void reconnect();
+void publishData(String feed, String data);
 
 #endif /* INC_TASKMQTT_H_ */

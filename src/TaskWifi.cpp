@@ -9,7 +9,7 @@ void TaskWifi(void *pvParameters)
     WiFi.begin(WIFI_SSID, WIFI_PASS);
     while (WiFi.status() != WL_CONNECTED)
     {
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        vTaskDelay(delay_wifi / portTICK_PERIOD_MS);
         Serial.println("Connecting to WiFi..");
     }
     wifiConnected = true;

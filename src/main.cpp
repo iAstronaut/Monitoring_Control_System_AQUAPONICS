@@ -9,6 +9,7 @@ void setup()
 
   // FreeRTOS tasks
   xTaskCreate(TaskGps, "TaskGps", 4096, NULL, 1, NULL);
+  xTaskCreate(TaskLed, "TaskLed", 2048, NULL, 2, NULL);
   xTaskCreate(TaskLoadSchedule, "TaskLoadSchedule", 4096, NULL, 1, NULL);
   xTaskCreate(TaskMQTT, "TaskMQTT", 4096, NULL, 1, NULL);
   xTaskCreate(TaskSchedule, "TaskSchedule", 4096, NULL, 1, NULL);

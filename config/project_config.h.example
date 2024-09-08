@@ -14,6 +14,7 @@
 #define delay_gps 5000
 #define delay_connect 100
 #define delay_wifi 1000
+#define delay_led 500
 
 // DEFINE PINS
 #define SDA 11

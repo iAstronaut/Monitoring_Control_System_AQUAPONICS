@@ -54,7 +54,7 @@ void TaskMQTT(void *pvParameters)
             while (true)
             {
                 client.loop();
-                vTaskDelay(100 / portTICK_PERIOD_MS);
+                vTaskDelay(delay_connect / portTICK_PERIOD_MS);
             }
         }
         else

@@ -31,6 +31,7 @@
 #include "TaskTemperatureHumidity.h"
 #include "TaskWifi.h"
 #include "TaskGps.h"
+#include "TaskLed.h"
 
 typedef struct
 {

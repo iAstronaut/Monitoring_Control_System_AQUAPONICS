@@ -36,7 +36,7 @@ void TaskServer(void *pvParameters)
     }
     while (WiFi.status() != WL_CONNECTED)
     {
-        vTaskDelay(100 / portTICK_PERIOD_MS);
+        vTaskDelay(delay_connect / portTICK_PERIOD_MS);
     }
     ws.onEvent(onEvent);
     server.addHandler(&ws);

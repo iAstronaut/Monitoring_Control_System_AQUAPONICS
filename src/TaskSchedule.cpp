@@ -53,7 +53,7 @@ void TaskSchedule(void *pvParameters)
 {
     while (true)
     {
-        if (!wifiConnected || !client.connected())
+        if (WiFi.status() != WL_CONNECTED || !client.connected())
         {
             vTaskDelay(100 / portTICK_PERIOD_MS);
             continue;

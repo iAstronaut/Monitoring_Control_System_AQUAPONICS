@@ -14,4 +14,7 @@ extern "C"
 }
 #endif
 
+extern TinyGPSPlus gps;
+extern SoftwareSerial ss;
+
 #endif /* INC_TASKGPS_H_ */

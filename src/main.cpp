@@ -4,10 +4,6 @@
 void setup()
 {
   Serial.begin(115200);
-  while (!Serial)
-  {
-    ;
-  }
   Serial2.begin(BAUD_RATE_2, SERIAL_8N1, TXD_RELAY, RXD_RELAY);
   Serial.println("Starting...");
 
@@ -23,4 +19,6 @@ void setup()
 
 void loop()
 {
+  while (ss.available() > 0)
+    gps.encode(ss.read());
 }

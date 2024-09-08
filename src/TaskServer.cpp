@@ -31,11 +31,10 @@ void TaskServer(void *pvParameters)
 
     if (!LittleFS.begin(true))
     {
-        Serial.println("An Error has occurred while mounting SPIFFS");
-        vTaskDelete(NULL); // Delete the task if SPIFFS initialization fails
+        Serial.println("An Error has occurred while mounting LittleFS");
+        vTaskDelete(NULL);
     }
-    Serial.println("SPIFFS mounted successfully");
-    while (!wifiConnected)
+    while (WiFi.status() != WL_CONNECTED)
     {
         vTaskDelay(100 / portTICK_PERIOD_MS);
     }
@@ -48,6 +47,5 @@ void TaskServer(void *pvParameters)
     server.on("/styles.css", HTTP_GET, [](AsyncWebServerRequest *request)
               { request->send(LittleFS, "/styles.css", "text/css"); });
     server.begin();
-    Serial.println(WiFi.localIP());
-    vTaskDelete(NULL); // Delete the task when done
+    vTaskDelete(NULL);
 }

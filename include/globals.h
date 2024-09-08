@@ -14,6 +14,7 @@
 #include <NTPClient.h>
 #include <SoftwareSerial.h>
 #include <TinyGPS++.h>
+#include <Adafruit_NeoPixel.h>
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"

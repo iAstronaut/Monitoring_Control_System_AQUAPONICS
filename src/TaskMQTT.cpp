@@ -31,7 +31,7 @@ void publishData(String feed, String data)
 
 void TaskMQTT(void *pvParameters)
 {
-    while (!wifiConnected)
+    while (WiFi.status() != WL_CONNECTED)
     {
         vTaskDelay(delay_connect / portTICK_PERIOD_MS);
     }
@@ -40,7 +40,7 @@ void TaskMQTT(void *pvParameters)
     client.setCallback(callback);
     while (!client.connected())
     {
-        Serial.print("Connecting to MQTT...");
+        Serial.println("Connecting to MQTT...");
         String clientId = "ESP32Client" + String(random(0, 1000));
         if (client.connect(clientId.c_str(), IO_USERNAME, IO_KEY))
         {

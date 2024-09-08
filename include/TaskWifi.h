@@ -14,6 +14,4 @@ extern "C"
 }
 #endif
 
-extern volatile bool wifiConnected;
-
 #endif /* INC_TASKWIFI_H_ */

@@ -14,6 +14,4 @@ extern "C"
 }
 #endif
 
-void reconnect();
-
 #endif /* INC_TASKLOADSCHEDULE_H_ */

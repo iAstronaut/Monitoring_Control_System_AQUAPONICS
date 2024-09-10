@@ -8,7 +8,6 @@
 .vscode/ipch/
 
 # Project configuration files
-config/project_config.h
-
+src/common/defines.h
 
 .DS_Store

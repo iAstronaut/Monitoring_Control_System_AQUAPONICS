@@ -7,15 +7,12 @@ void setup()
   Serial2.begin(BAUD_RATE_2, SERIAL_8N1, TXD_RELAY, RXD_RELAY);
   Serial.println("Starting...");
 
-  // FreeRTOS tasks
+  wifi_init();
+  mqtt_init();
   xTaskCreate(TaskGps, "TaskGps", 4096, NULL, 1, NULL);
-  xTaskCreate(TaskLed, "TaskLed", 2048, NULL, 2, NULL);
   xTaskCreate(TaskLoadSchedule, "TaskLoadSchedule", 4096, NULL, 1, NULL);
-  xTaskCreate(TaskMQTT, "TaskMQTT", 4096, NULL, 1, NULL);
-  xTaskCreate(TaskSchedule, "TaskSchedule", 4096, NULL, 1, NULL);
-  xTaskCreate(TaskServer, "TaskServer", 8192, NULL, 1, NULL);
   xTaskCreate(TaskTemperatureHumidity, "TaskTemperatureHumidity", 4096, NULL, 1, NULL);
-  xTaskCreate(TaskWifi, "TaskWifi", 4096, NULL, 1, NULL);
+  CreateTask();
 }
 
 void loop()

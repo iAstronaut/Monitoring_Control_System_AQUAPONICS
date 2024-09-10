@@ -1,4 +1,4 @@
-#include "TaskLed.h"
+#include "CreateTask.h"
 
 Adafruit_NeoPixel led_rgb(NUM_PIXELS, LED, NEO_GRB + NEO_KHZ800);
 
@@ -20,6 +20,7 @@ void TaskLed(void *pvParameters)
             {
                 led_rgb.setPixelColor(0, led_rgb.Color(0, 0, 0));
             }
+            led_rgb.setBrightness(Brightness);
             led_rgb.show();
             ledState = !ledState;
         }

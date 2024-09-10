@@ -71,3 +71,8 @@ void reconnect()
 {
     xTaskCreate(TaskMQTT, "TaskMQTT", 4096, NULL, 1, NULL);
 }
+
+void mqtt_init()
+{
+    xTaskCreate(TaskMQTT, "TaskMQTT", 4096, NULL, 1, NULL);
+}

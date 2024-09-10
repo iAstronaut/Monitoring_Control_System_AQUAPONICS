@@ -19,19 +19,23 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-// include config files
-#include "../config/project_config.h"
-#include "../config/RelayStatus.h"
+// include common files
+#include "../src/common/defines.h"
+#include "../src/common/RelayStatus.h"
+
+// include init
+#include "TaskMQTT.h"
+#include "TaskWifi.h"
+
+// include device
+#include "TaskGps.h"
+#include "TaskMobus.h"
+#include "TaskTemperatureHumidity.h"
 
 // include Task files
-#include "TaskLoadSchedule.h"
-#include "TaskMQTT.h"
-#include "TaskSchedule.h"
-#include "TaskServer.h"
-#include "TaskTemperatureHumidity.h"
-#include "TaskWifi.h"
-#include "TaskGps.h"
-#include "TaskLed.h"
+#include "CreateTask.h"
+
+#include "./utils/utility_functions.h"
 
 typedef struct
 {
@@ -49,12 +53,5 @@ typedef struct
 
 extern Schedule schedules[MAX_SCHEDULES];
 extern int scheduleCount;
-
-void saveSchedulesToFile();
-void loadSchedulesFromFile();
-String scheduleToJson(const Schedule &schedule);
-void sendSchedules();
-void parseJson(String message);
-void sendValue(int index, String state);
 
 #endif

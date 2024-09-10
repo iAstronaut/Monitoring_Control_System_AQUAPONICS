@@ -3,15 +3,6 @@
 
 #include "globals.h"
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-    void TaskWifi(void *pvParameters);
-
-#ifdef __cplusplus
-}
-#endif
+void wifi_init();
 
 #endif /* INC_TASKWIFI_H_ */

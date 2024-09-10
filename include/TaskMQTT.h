@@ -5,17 +5,7 @@
 
 extern PubSubClient client;
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
-    void TaskMQTT(void *pvParameters);
-
-#ifdef __cplusplus
-}
-#endif
-
+void mqtt_init();
 void reconnect();
 void publishData(String feed, String data);
 

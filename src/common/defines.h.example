@@ -14,7 +14,7 @@
 #define delay_gps 5000
 #define delay_connect 100
 #define delay_wifi 1000
-#define delay_led 500
+#define delay_led 1000
 
 // DEFINE PINS
 #define SDA 11
@@ -27,6 +27,7 @@
 #define NUM_PIXELS 4
 #define BAUD_RATE_1 115200
 #define BAUD_RATE_2 9600
+#define Brightness 128 // Set brightness to (0 to 255)
 
 // DEFINE MQTT
 #define MQTT_SERVER "io.adafruit.com"

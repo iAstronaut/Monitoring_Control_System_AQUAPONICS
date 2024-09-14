@@ -24,16 +24,16 @@
 #include "../src/common/RelayStatus.h"
 
 // include init
-#include "TaskMQTT.h"
-#include "TaskWifi.h"
+#include "../src/task/TaskMQTT.h"
+#include "../src/task/TaskWifi.h"
 
 // include device
-#include "TaskGps.h"
-#include "TaskMobus.h"
-#include "TaskTemperatureHumidity.h"
+#include "../src/device/TaskGps.h"
+#include "../src/device/TaskMobus.h"
+#include "../src/device/TaskTemperatureHumidity.h"
 
 // include Task files
-#include "CreateTask.h"
+#include "../src/task/CreateTask.h"
 
 #include "./utils/utility_functions.h"
 
